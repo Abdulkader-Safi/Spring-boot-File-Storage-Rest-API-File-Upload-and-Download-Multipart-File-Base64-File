@@ -11,9 +11,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class FileStorageDTO {
 
-    private String fileName;
+    private String filename;
 
     private String filetype;
 
-    private String fileBase64;
+    private String filebase64;
 }
