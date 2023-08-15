@@ -35,8 +35,8 @@ public class FileStorageController {
     public ResponseEntity<?> deleteMultipartFile(@PathVariable String filename) {
         boolean delete = fsServiceImpl.deleteMultipartFile(filename);
         if (delete) {
-            return ResponseEntity.status(HttpStatus.OK).body("");
+            return ResponseEntity.status(HttpStatus.OK).body(String.format("File %s was deleted successfully", filename));
         }
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("");
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(String.format("File %s was delete failed", filename));
     }
 }
