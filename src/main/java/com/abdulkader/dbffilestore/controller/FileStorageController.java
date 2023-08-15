@@ -32,7 +32,7 @@ public class FileStorageController {
     }
 
     @PostMapping("/generale/upload")
-    public ResponseEntity<?> uploadFile(@RequestParam("file") MultipartFile multipartFileData, @RequestBody FileStorageDTO base64FileData) {
+    public ResponseEntity<?> uploadFile(@RequestParam(value = "file", required = false) MultipartFile multipartFileData, @RequestBody(required = false) FileStorageDTO base64FileData) {
         if (multipartFileData != null) {
             return uploadMultipartFile(multipartFileData);
         } else {
