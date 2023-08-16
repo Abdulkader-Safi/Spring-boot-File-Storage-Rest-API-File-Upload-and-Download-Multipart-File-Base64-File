@@ -28,7 +28,7 @@ public class FileStorageServiceImpl {
 
         FileStorage newFile = fsService.persisFile(file);
         if (newFile != null) {
-            return String.format(file.getFileName());
+            return String.format(newFile.getFileName());
         }
 
         return String.format("File %s failed to upload", data.getOriginalFilename());
